@@ -323,7 +323,7 @@ def Van_Tassel_kinetics_reference(ka, ks, kd, r_alpha, Sigma, times, c):
     """
     from scipy.integrate import odeint, ode
     from numpy import exp, pi, array
-    from Surface_Reaction_Tools.theoretical import Phi_alpha, Psi_alpha_beta
+    from colloid.adsorption.theoretical import Phi_alpha, Psi_alpha_beta
 
     def dgamma_dt(gamma_values, t, ka, ks, kd, r_alpha, Sigma, c):
         gamma_alpha = gamma_values[0];   gamma_beta = gamma_values[1];
@@ -365,7 +365,7 @@ def Van_Tassel_kinetics_theta(ka, ks, kd, r_alpha, Sigma, times, c):
     """
     from scipy.integrate import odeint, ode
     from numpy import exp, pi, array
-    from Surface_Reaction_Tools.theoretical import Phi_alpha_theta, Psi_alpha_beta_theta
+    from colloid.adsorption.theoretical import Phi_alpha_theta, Psi_alpha_beta_theta
 
     def dtheta_dt(theta_values, t, ka, ks, kd, r_alpha, Sigma, c):
         theta_alpha = theta_values[0];   theta_beta = theta_values[1];

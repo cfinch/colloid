@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from Surface_Reaction_Tools.theoretical import RSA_kinetics, Langmuir_kinetics,\
+from colloid.adsorption.theoretical import RSA_kinetics, Langmuir_kinetics,\
         Langmuir_kinetics_twolayer, Van_Tassel_kinetics, Van_Tassel_kinetics
 import numpy as np
 
@@ -187,7 +187,7 @@ class Fitter():
         from Data_Tools.process import rebin
         import os
         from scipy.interpolate import UnivariateSpline
-        from Surface_Reaction_Tools.data_utilities import read_ACE_near_surface_concentration
+        from colloid.adsorption.data_utilities import read_ACE_near_surface_concentration
         from matplotlib import pyplot as plt
 
         self.cfd_concentrations = []
@@ -579,7 +579,7 @@ class Fit_Langmuir_Transition(Fitter):
         return error
 
     def run_adsorption_model(self, i):
-        from Surface_Reaction_Tools.theoretical import Langmuir_transition_kinetics
+        from colloid.adsorption.theoretical import Langmuir_transition_kinetics
         if self.constant_concentration:
             theta1, theta2 = Langmuir_transition_kinetics(self.ka, self.ks, self.kd,
                     self.ratio, self.times[i], const_C=self.concentrations[i], 

@@ -3,7 +3,7 @@ from numpy import *
 import tables
 import pylab
 
-from Surface_Reaction_Tools.analysis import compute_AVF
+from colloid.adsorption.analysis import compute_AVF
 
 def plot_particles(adsorbed_x, adsorbed_y, exclusion_radius, S):
     from matplotlib.patches import Circle

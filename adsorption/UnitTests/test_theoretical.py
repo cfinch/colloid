@@ -3,7 +3,7 @@ import unittest
 import numpy
 from matplotlib import pyplot as plt
 
-from Surface_Reaction_Tools.theoretical import *
+from colloid.adsorption.theoretical import *
 
 class TestTheoreticalModule(unittest.TestCase):
     """Unit tests for module theoretical"""
@@ -35,7 +35,7 @@ class TestTheoreticalModule(unittest.TestCase):
         analytical_solution = Langmuir_analytical(self.ka, self.kd, self.CA, 
                 self.times)
         numerical_solution = Langmuir_kinetics(self.ka, self.kd, self.times, 
-                const_C=self.CA, blocking_fn_args=1.0)
+                const_C=self.CA, theta_max=1.0)
 
         self.assertTrue(numpy.allclose(analytical_solution, 
             numerical_solution))
@@ -146,7 +146,7 @@ class TestTheoreticalModule(unittest.TestCase):
 
     def test_Van_Tassel_kinetics(self):
         """ """
-        from Surface_Reaction_Tools.theoretical import Van_Tassel_kinetics, \
+        from colloid.adsorption.theoretical import Van_Tassel_kinetics, \
         Van_Tassel_kinetics_reference, Van_Tassel_kinetics_theta
 
         ### Parameters ###
@@ -211,7 +211,7 @@ class TestTheoreticalModule(unittest.TestCase):
         transition gives the same result as the direct implementation of
         the same model from Langmuir 2003, 19, 8033-8040"""
 
-        from Surface_Reaction_Tools.theoretical import Langmuir_transition_kinetics
+        from colloid.adsorption.theoretical import Langmuir_transition_kinetics
 
         # Direct implementation of model published by Garcia
         M = 39e3   # g/mole

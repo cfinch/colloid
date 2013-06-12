@@ -1,5 +1,5 @@
 import numpy as np
-from constants import *
+from colloid.constants import *
 
 def sigma_psi(psi_P_bar, kappa_a):
     """Compute the dimensionless particle charge density (sigma bar) using the
